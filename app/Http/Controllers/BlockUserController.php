@@ -3,11 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\BlockRequest;
-use App\Models\User;
 use App\Models\UserBlockList;
-use App\Models\UserLike;
-use App\Models\UserLiked;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class BlockUserController extends Controller

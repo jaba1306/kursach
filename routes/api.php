@@ -1,9 +1,9 @@
 <?php
 
 use App\Exceptions\ApiException;
+use App\Http\Controllers\Auth;
 use App\Http\Controllers\BlockUserController;
 use App\Http\Controllers\GetBlockedUsersController;
-use App\Http\Controllers\MatchController;
 use App\Http\Controllers\UnblockUserController;
 use App\Http\Controllers\User\Interests\AddUserInterestsController;
 use App\Http\Controllers\User\Interests\InterestsController;
@@ -18,14 +18,10 @@ use App\Http\Controllers\User\UserProfile\UpdateDescriptionController;
 use App\Http\Controllers\User\UserProfile\UpdateGenderController;
 use App\Http\Controllers\User\UserProfile\UpdateLocationController;
 use App\Http\Controllers\User\UserProfile\UpdateUsernameController;
-use App\Http\Controllers\User\UserSecurity\UpdateEmailController;
-use App\Http\Controllers\User\UserSecurity\UpdatePasswordController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth;
 
 Route::post("/registration", Auth\RegistrationController::class);
-//Route::post("/login", Auth\LoginController::class);
+Route::post("/login", Auth\LoginController::class);
 Route::middleware("auth:sanctum")->group(function (){
     Route::get("/logout", Auth\LogoutController::class);
 
